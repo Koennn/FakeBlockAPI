@@ -1,0 +1,6 @@
+name: FakeBlockAPI
+version: ${project.version}
+main: me.koenn.fakeblockapi.FakeBlockAPI
+prefix: FakeBlockAPI
+depend: [KoennCore]
+authors: [Koenn]
