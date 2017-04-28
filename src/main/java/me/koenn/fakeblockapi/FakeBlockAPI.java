@@ -15,9 +15,15 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class FakeBlockAPI extends JavaPlugin {
 
     public static final Registry<FakeBlock> fakeBlockRegistry = new Registry<>(FakeBlock::toString);
+    private static FakeBlockAPI instance;
+
+    public static FakeBlockAPI getInstance() {
+        return instance;
+    }
 
     @Override
     public void onEnable() {
+        instance = this;
         this.getLogger().info("All credits for this plugin go to Koenn");
 
         Bukkit.getPluginManager().registerEvents(new PlayerInteractListener(), this);

@@ -1,6 +1,7 @@
 package me.koenn.fakeblockapi;
 
 import me.koenn.core.misc.LocationHelper;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -29,7 +30,7 @@ public class FakeBlock {
         this.meta = meta;
         this.visibleFor = new ArrayList<>();
         Collections.addAll(this.visibleFor, visibleFor);
-        this.visibleFor.forEach(this::refreshFor);
+        Bukkit.getScheduler().scheduleSyncDelayedTask(FakeBlockAPI.getInstance(), () -> this.visibleFor.forEach(this::refreshFor), 5);
     }
 
     @SuppressWarnings("deprecation")

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="FakeBlockAPI:jar">
+    <output-path>D:/Server/plugins</output-path>
+    <root id="archive" name="FakeBlockAPI.jar">
+      <element id="module-output" name="FakeBlockAPI" />
+    </root>
+  </artifact>
+</component>
