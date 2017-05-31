@@ -53,7 +53,6 @@ public class PlayerInteractListener implements Listener {
 
     @EventHandler(ignoreCancelled = true)
     public void onBlockBreak(BlockBreakEvent event) {
-        Bukkit.getLogger().info("break");
         if (event.getBlock() == null) {
             return;
         }
