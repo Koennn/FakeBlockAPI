@@ -4,6 +4,7 @@ import me.koenn.core.misc.LocationHelper;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -56,6 +57,13 @@ public class FakeBlock {
 
     public List<Player> getVisibleFor() {
         return visibleFor;
+    }
+
+    @SuppressWarnings("deprecation")
+    public void resetFor(Player player) {
+        Block block = this.location.getBlock();
+        player.sendBlockChange(this.location, block.getType(), block.getData());
+        this.visibleFor.remove(player);
     }
 
     @Override
